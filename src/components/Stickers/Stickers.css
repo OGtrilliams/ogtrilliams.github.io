@@ -1,0 +1,75 @@
+
+.sticker p, .star{
+    font-size: 32px;    
+}
+.fa-heart{
+    font-size: 3em;
+}
+.star{
+    display: flex;
+    font-size: 40px;
+    color: goldenrod;
+}
+.rainbow:hover{
+    -webkit-animation: rainbow 5s infinite;
+    /* Internet Explorer */
+    -ms-animation: rainbow 5s infinite;
+    /* Standar Syntax */
+    animation: rainbow 5s infinite;
+}
+@keyframes rainbow {
+    0% {
+      color: orange;
+    }
+    10% {
+      color: purple;
+    }
+    20% {
+      color: red;
+    }
+    30% {
+      color: CadetBlue;
+    }
+    40% {
+      color: yellow;
+    }
+    50% {
+      color: coral;
+    }
+    60% {
+      color: green;
+    }
+    70% {
+      color: cyan;
+    }
+    80% {
+      color: DeepPink;
+    }
+    90% {
+      color: DodgerBlue;
+    }
+    100% {
+      color: orange;
+    }
+  }
+  .blink{
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+    /* Internet Explorer */
+    -ms-animation: blink 5s infinite;
+    /* Standar Syntax */
+    animation: blink-animation 1s steps(5, start) infinite;
+  }
+  @keyframes blink-animation{
+    0%{
+        color: red;
+    }
+    50%{
+        color: darkred;
+    }
+    /* 75%{
+        color: purple;
+    } */
+    100%{
+        color: black;
+    }
+  }
