@@ -1,75 +1,26 @@
 import "./Socials.css";
-import {
-  FaDev,
-  FaEtsy,
-  FaGithub,
-  FaLinkedin,
-  FaTiktok,
-  FaTwitch,
-  FaYoutube,
-  FaHeart,
-} from "react-icons/fa";
-import { FaBluesky, FaRobot } from "react-icons/fa6";
+import "../Functions/Stars.css";
 import fire_robot from "../../assets/fire-robot.png";
 import blacktocat from "../../assets/blacktocats.png";
 import bsky_logo from "../../assets/Bluesky_logo.svg";
 import chunkicorn from "../../assets/chunky-unicorn.png";
 import capybara from "../../assets/capybara-with-berries.png";
 import youtube_logo from "../../assets/yt-logo.png";
-
+import tiktok_icon from "../../assets/tiktok_logo_social.png";
 function Socials() {
-  const links = [
-    {
-      id: "gh",
-      name: "Github",
-      url: "https://github.com/OGtrilliams",
-      icon: <FaGithub />,
-      img: { blacktocat },
-    },
-    {
-      id: "bsky",
-      name: "Bluesky",
-      url: "https://bsky.app/profile/stilltrill.bsky.social",
-      icon: <FaBluesky />,
-      img: { bsky_logo },
-    },
-    {
-      id: "etsy",
-      name: "Etsy",
-      url: "https://etsy.com/OGtrilliams",
-      icon: <FaEtsy />,
-    },
-    {
-      id: "yt",
-      name: "YouTube",
-      link: "https://youtube.com/OGtrilliams",
-      icon: <FaYoutube />,
-    },
-    {
-      id: "li",
-      name: "LinkedIn",
-      link: "https://linkedin.com/in/trilliams",
-      icon: <FaLinkedin />,
-    },
-    {
-      id: "twitch",
-      name: "Twitch",
-      link: "https://twitch.com/OGtrilliams",
-      icon: <FaTwitch />,
-    },
-    {
-      id: "dev",
-      name: "dev.to",
-      link: "https://dev.to/OGtrilliams",
-      icon: <FaDev />,
-    },
-    {
-      id: "tt",
-      name: "TikTok",
-      link: "https://tiktok.com/OGtrilliams",
-      icon: <FaTiktok />,
-    },
-  ];
+  // const clr = document.querySelector("input");
+  const btn = document.querySelector("button");
+
+  // clr.addEventListener("input", (ev) => {
+  //   btn.style.setProperty("--clr", ev.target.value);
+  // });
+
+  setTimeout(() => {
+    btn.classList.add("over");
+    setTimeout(() => {
+      btn.classList.remove("over");
+    }, 2500);
+  }, 500);
 
   return (
     <>
@@ -79,7 +30,7 @@ function Socials() {
           I &lt;3 <br />
           Coding
         </div>
-        <div className="sticker-gh">
+        <div className="sticker-gh hvr-curl-top-right">
           <a
             href="https://github.com/OGtrilliams"
             target="_blank"
@@ -88,14 +39,26 @@ function Socials() {
             <img src={blacktocat} alt="Github" />
           </a>
         </div>
-        <div className="tiktok-sticker">
-          <span className="tiktok-icon tt">
-            <FaTiktok />
+        <div className="tiktok-sticker hvr-curl-top-right rainbow">
+          <span className="tik">
+            <a
+              href="https://tiktok.com/OGtrilliams"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={tiktok_icon} className="tiktok-icon" />
+            </a>
           </span>
         </div>
 
         <div className="linkedin-sticker hvr-curl-top-right">
-          <i className="fa-brands fa-linkedin-in fa-border fa-3x"></i>
+          <a
+            href="https://linkedin.com/in/trilliams"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-linkedin-in fa-border fa-3x"></i>
+          </a>
         </div>
         <div className="sticker-css hvr-curl-top-right" id="web">
           HTML &amp; CSS
@@ -108,17 +71,14 @@ function Socials() {
             <br /> Our Friends
           </p>
         </div>
-        <div className="sticker-bsky">
+        <div className="sticker-bsky sparkles">
           <a
             href="https://bsky.app/profile/stilltrill.bsky.social"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span id="dragging" className="sticker-bsky-txt">
-              <FaBluesky />
-              <br />
-              Bluesky
-            </span>
+            <img src={bsky_logo} className="sticker-bsky-logo " />
+            <span className="sticker-bsky-txt">Bluesky</span>
           </a>
         </div>
 
@@ -148,22 +108,16 @@ function Socials() {
           </a>
         </div>
 
-        <div className="twitch-sticker ">
-          <i
-            className="fa-brands fa-twitch fa-inverse"
-            data-fa-mask="fa-solid fa-comment"
-          ></i>
-        </div>
-        <div className="etsy-sticker">
+        <div className="twitch-sticker hvr-curl-top-right">
           <a
-            href="https://etsy.com/OGtrilliams"
+            href="https://twitch.com/OGtrilliams"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <p>
-              {" "}
-              <FaEtsy />
-            </p>
+            <i
+              className="fa-brands fa-twitch fa-inverse"
+              data-fa-mask="fa-solid fa-comment"
+            ></i>
           </a>
         </div>
       </div>
