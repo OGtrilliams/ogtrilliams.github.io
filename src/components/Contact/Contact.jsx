@@ -1,11 +1,9 @@
 import React from "react";
 import "./Contact.css";
 import {
-  FaArrowRight,
   FaEnvelope,
   FaEnvelopesBulk,
   FaGlobe,
-  FaHouse,
   FaPaperPlane,
 } from "react-icons/fa6";
 
