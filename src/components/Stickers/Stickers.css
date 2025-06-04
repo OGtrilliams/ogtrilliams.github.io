@@ -1,0 +1,93 @@
+.heartsticker{
+    transform: rotate(-35deg);
+    }
+.sticker p, .star{
+    font-size: 32px;    
+}
+.fa-heart{
+    font-size: 2em;
+}
+.star{
+    display: flex;
+    font-size: 40px;
+    color: goldenrod;
+}
+.rainbow:hover{
+    -webkit-animation: rainbow 5s infinite;
+    /* Internet Explorer */
+    -ms-animation: rainbow 5s infinite;
+    /* Standar Syntax */
+    animation: rainbow 5s infinite;
+}
+@keyframes rainbow {
+    0% {
+      color: orange;
+    }
+    10% {
+      color: purple;
+    }
+    20% {
+      color: red;
+    }
+    30% {
+      color: CadetBlue;
+    }
+    40% {
+      color: yellow;
+    }
+    50% {
+      color: coral;
+    }
+    60% {
+      color: green;
+    }
+    70% {
+      color: cyan;
+    }
+    80% {
+      color: DeepPink;
+    }
+    90% {
+      color: DodgerBlue;
+    }
+    100% {
+      color: orange;
+    }
+  }
+
+ /* HTML: <div class="folded-rectangle"></div> */
+.folded-rectangle {
+    --r: 40px; /* radius */
+  
+    width: 300px;
+    aspect-ratio: 1.5;
+    border-radius: 0 var(--r)/0 calc(2*var(--r));
+    padding-block: var(--r);
+    --_m:#0000 100%,#000 calc(100% + 1px);
+    mask:
+      conic-gradient(#000 0 0) content-box,
+      radial-gradient(var(--r) at 100% 0,var(--_m)) no-repeat,
+      radial-gradient(var(--r) at 0 100%,var(--_m)) 100% 100% no-repeat;
+    mask-size: var(--r) var(--r);
+  }
+  .blink{
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+    /* Internet Explorer */
+    -ms-animation: blink 5s infinite;
+    /* Standar Syntax */
+    animation: blink-animation 1s steps(5, start) infinite;
+  }
+  @keyframes blink-animation{
+    0%{
+        color: red;
+    }
+    50%{
+        color: darkred;
+    }
+    /* 75%{
+        color: purple;
+    } */
+    100%{
+        color: black;
+    }
+  }

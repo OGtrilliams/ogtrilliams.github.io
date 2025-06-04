@@ -1,0 +1,142 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body{
+  height: 90vh;
+}
+body{
+  background-image: url('./assets/G632NZm.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.notebook-container{
+width: 1000px;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 60px 600px 120px;
+  grid-template-rows: 60px 60px 500px 50px;
+  gap: 5px;
+  align-content: center;
+  height: 100%;
+  font-family: "Short Stack";
+} 
+.div1 {
+    grid-column: span 3 / span 3;
+    }
+
+.div2 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.div3 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 3;
+    overflow-y: auto;
+    background-color: rgba(245, 245, 245, 0.487);
+    z-index: 1;
+    margin-left: 40px;
+}
+
+.div4 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 4;
+   
+}
+
+.div5 {
+    grid-row: span 3 / span 3;
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+.stars{
+  grid-column: 3;
+  transform: rotate(45deg);
+}
+.clock{
+  position: absolute;
+  top: 0;
+  margin-top: 45px;
+  text-wrap: nowrap;
+}    
+:root {
+  --main-line-color: hsl(234, 62%, 86%);
+  --side-line-color: hsl(350, 100%, 91%);
+  --paper-color: hsl(0, 15%, 95%);
+  --ink-color: hsl(0, 0%, 12%);
+  --line-thickness: 3px;
+  --top-space: 4lh;
+}
+h2{
+  font-family: "fleur De Leah";
+  transform: rotate(-45deg);
+}
+.paper {
+  background: var(--paper-color);
+  margin: 2rem;
+  padding: calc(var(--top-space) - 0.5lh) 3rem 1rem 5.5rem;
+  /* font-family: system-ui;
+  font-size: 1.5rem; */
+  line-height: 1.6;
+  /* color: var(--ink-color); */
+  background-image: 
+    /* the red line */ linear-gradient(
+      90deg,
+      transparent,
+      transparent 4rem,
+      var(--side-line-color) 4rem,
+      var(--side-line-color) 4.25rem,
+      transparent 4.25rem
+    ),
+    /*  The top space  */
+      linear-gradient(
+        var(--paper-color),
+        var(--paper-color) var(--top-space),
+        transparent var(--top-space)
+      ),
+    /* the blue lines */
+      repeating-linear-gradient(
+        transparent,
+        transparent calc(1lh - var(--line-thickness)),
+        var(--main-line-color) calc(1lh - var(--line-thickness)),
+        var(--main-line-color) 1lh,
+        transparent 1lh
+      );
+  box-shadow: 0 0 1rem rgb(0 0 0 / 0.25);
+}
+.leopard{
+  background-image: url('./assets/4945858.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.rainbow-text {
+  background-image: repeating-linear-gradient(to left, violet, blueviolet, blue, greenyellow, yellow, orange, red);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+  animation: rainbow 10s cubic-bezier(0.4, 0, 1, 1) infinite;
+  
+}
+@keyframes rainbow {
+  0% {
+      background-position: 0% 50%;
+  }
+
+  50% {
+      background-position: 100% 25%;
+  }
+
+  100% {
+      background-position: 0% 50%;
+  }
+} 

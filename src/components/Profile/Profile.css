@@ -1,0 +1,30 @@
+.card{
+    margin-left: 40px;
+    
+}
+.card .asl{
+    display: inline-flex;
+}
+.card h3{
+    font-size: 2em;
+}
+.card img{
+    border-radius: 25%;
+    width: 120px;
+}
+.card .check{
+    color: green;
+}
+.card .x-mark{
+    color: red;
+    font-size: 22px;
+}
+.card .work-history, .card .skills{
+    list-style: none;
+}
+.card .status{
+    font-style: italic;
+}
+.card .links{
+    color: greenyellow;
+}

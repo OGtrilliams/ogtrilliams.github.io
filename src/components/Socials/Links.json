@@ -1,0 +1,52 @@
+{
+    "links": [
+    {
+      "id": "1",
+      "name": "Github",
+      "link": "https://github.com/OGtrilliams",
+      "icon": "fa-brands fa-github"
+    },
+    {
+      "id": "2",
+      "name": "Bluesky",
+      "link": "https://bsky.app/profile/stilltrill.bsky.social",
+      "icon": "fa-brands fa-bluesky"
+    },
+    {
+      "id": "3",
+      "name": "Etsy",
+      "link": "https://etsy.com/OGtrilliams",
+      "icon": "fa-brands fa-etsy"
+    },
+    {
+      "id": "4",
+      "name": "YouTube",
+      "link": "https://youtube.com/OGtrilliams",
+      "icon": "fa-brands fa-youtube"
+    },
+    {
+      "id": "5",
+      "name": "linkedIn",
+      "link": "https://linkedin.com/in/trilliams",
+      "icon": "fa-brands fa-linkedin"
+    },
+    {
+      "id": "6",
+      "name": "Twitch",
+      "link": "https://twitch.com/OGtrilliams",
+      "icon": "fa-brands fa-twitch"
+    },
+    {
+      "id": "7",
+      "name": "dev.to",
+      "link": "https://dev.to/OGtrilliams",
+      "icon": "fa-brands fa-dev"
+    },
+    {
+      "id": "8",
+      "name": "TikTok",
+      "link": "https://tiktok.com/OGtrilliams",
+      "icon": "fa-brands fa-tiktok"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+.nav-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+    
+}
+.nav-container button{
+    font-size: 40px;
+    /* position: absolute;    */
+   color: #fc00ff;
+    cursor: pointer;    
+}
+.btn-grad {
+  background-image: linear-gradient(to right, #fc00ff 0%, #00dbde  51%, #fc00ff  100%);
+   background-size: 200% auto;
+   transition: .5s ease-in-out;
+   border: 4px dashed transparent;
+   border-radius: 10px;
+ }
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color:rgb(0, 213, 0);
+   text-decoration: none;
+   border: 8px dashed transparent;
+ }
+ .nav-container .active{
+  color: aqua;
+  border: 6px solid black;
+  
+}
+.page-content{
+  display: none;
+}
+ .page-active{
+  display: block;
+  overflow-y: auto;
+ }

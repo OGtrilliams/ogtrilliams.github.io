@@ -1,0 +1,166 @@
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .antennas {
+    position: absolute;
+    z-index: -1;
+    width: 200px;
+    right: -25%;
+    top: -5%;
+  }
+  
+  .antenna {
+    position: absolute;
+    background: linear-gradient(to right, rgb(248, 200, 145) 5%, rgb(142, 142, 142) 15%, rgb(210, 210, 210) 30% 50%, rgba(142,142,142,1) 75%, rgb(248, 200, 145) 95%);
+    border-radius: 1rem;
+  
+    &::after {
+      position: absolute;
+      content: '';
+      height: 10px;
+      width: 20px;
+      background: linear-gradient(to right, rgb(248, 200, 145) 5%, rgb(142, 142, 142) 15%, rgb(210, 210, 210) 30% 50%, rgba(142,142,142,1) 75%, rgb(248, 200, 145) 95%);
+      border-radius: 7% 10% 24% 26% / 6% 4% 30% 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0px 2px 0 rgb(130, 130, 130);
+    }
+  
+    &.antenna1 {
+      top: -100px;
+      left: 45px;
+      height: 150px;
+      width: 4px;
+      transform: rotate(-20deg);
+    }
+    
+    &.antenna2 {
+      top: -150px;
+      left: 100px;
+      height: 200px;
+      width: 4px;
+      transform: rotate(20deg);
+    }
+  }
+
+  .outer-tv {
+    height: 200px;
+    width: 300px;
+    border-radius: 2.5rem;
+    background-color: rgb(224, 125, 12);
+    padding: 1rem;
+    border: 3px solid rgba(0, 0, 0, 0.33);
+    box-shadow: inset 1px 2px 0 rgba(255, 255, 255, 0.75);
+  }
+  
+  .tv {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem;
+    box-shadow: inset -1px -2px 10px rgba(247, 177, 64, 0.75),
+      inset 1px 2px 10px rgba(88, 39, 10, 0.25),
+      1px 2px 3px rgba(255, 255, 255, 0.5);
+    border-radius: 2.5rem;
+    background: linear-gradient(145deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0.15) 100%);
+  }
+  
+  .tv-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    border-radius: 1.25rem;
+    box-shadow: inset 2px 1px 3px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(0deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.15) 50%, rgba(255,255,255,0.15) 100%);
+    background-color: rgb(213, 212, 212);
+  }
+  
+  .screen-container {
+    width: 70%;
+    height: 100%;
+    padding: 1rem 0 1rem 1rem;
+  }
+  
+  .outer-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 3rem;
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.25),
+      inset 1px 1px 1px rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    border-radius: 2.5rem;
+    background: linear-gradient(145deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0.2) 100%);
+  }
+  .screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(97, 105, 98);
+    border-radius: 2rem;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+  }
+  
+  .tv-right {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 30%;
+    border-radius: 0 2.5rem 2.5rem 0;
+    padding: 1rem 1.5rem;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: center;
+    padding: 0.75rem .5rem;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    box-shadow: inset -2px -2px 0 rgba(255, 255, 255, 0.25),
+      inset 2px 2px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  .knob {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.25),
+      inset -1px -1px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+  
+  .knob.rotate {
+    transform: rotate(30deg);
+  }
+  
+  .dial {
+    height: 100%;
+    width: 5px;
+    background-color: rgb(224, 125, 12);
+    border-radius: 1rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25),
+      inset 0 -2px 0 rgba(0, 0, 0, 0.25);
+  }
+  .yt-icon{
+    font-size: 4em;
+    color: red;
+  }
