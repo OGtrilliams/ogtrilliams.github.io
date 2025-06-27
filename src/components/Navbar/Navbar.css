@@ -1,37 +1,92 @@
-.nav-container{
+nav {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-    
+  align-items: center;
+  min-height: 8vh;
+  font-family: "Montserrat";
+  background-color: var(--darkpink);
 }
-.nav-container button{
-    font-size: 40px;
-    /* position: absolute;    */
-   color: #fc00ff;
-    cursor: pointer;    
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  /* width: 30%; */
+
+  li {
+    list-style: none;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+  }
 }
-.btn-grad {
-  background-image: linear-gradient(to right, #fc00ff 0%, #00dbde  51%, #fc00ff  100%);
-   background-size: 200% auto;
-   transition: .5s ease-in-out;
-   border: 4px dashed transparent;
-   border-radius: 10px;
- }
- .btn-grad:hover {
-   background-position: right center; /* change the direction of the change here */
-   color:rgb(0, 213, 0);
-   text-decoration: none;
-   border: 8px dashed transparent;
- }
- .nav-container .active{
-  color: aqua;
-  border: 6px solid black;
-  
+/* Responsive navbar */
+
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 60%;
+  }
 }
-.page-content{
-  display: none;
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: var(--darkpink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%; /*this can be changed*/
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
 }
- .page-active{
-  display: block;
-  overflow-y: auto;
- }
+.nav-active {
+  transform: translateX(0%);
+}
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.toggle .line-1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line-2 {
+  opacity: 0;
+}
+.toggle .line-3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+/* dark mode */
+body.dark-mode nav {
+  background-color: var(--darkish-bg);
+}
+body.dark-mode .ul-menu a {
+  color: whitesmoke;
+}
+body.dark-mode .ul-menu a:hover {
+  color: white;
+}
+body.dark-mode .nav-links a {
+  color: var(--dark-link);
+}
+body.dark-mode .logo {
+  color: var(--dark-logo);
+}

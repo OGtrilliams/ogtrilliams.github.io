@@ -1,23 +1,24 @@
-import React from "react";
-import Head from "./components/Head/Head";
-import Footer from "./components/Footer/Footer";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
-import Stickers from "./components/Stickers/Stickers";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./components/Home/Home.jsx";
+import Layout from "./components/Pages/Layout.jsx";
+import Resume from "./components/Resume/Resume.jsx";
+import Blog from "./components/Pages/Blog.jsx";
+import NotFound from "./components/Pages/NotFound.jsx";
 
 function App() {
   return (
     <>
-      <div className="notebook-container">
-        <div className="paper">
-          <div className="content-container">
-            <Head />
-            <Navbar />
-            <Stickers />
-            <Footer />
-          </div>
-        </div>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

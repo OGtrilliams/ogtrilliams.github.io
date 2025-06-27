@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.nf-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: #f7da00;
+  position: relative;
+}
+.nf-photo {
+  background: url("../../assets/gM3IqLX.jpeg");
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.back-msg {
+  background-color: transparent;
+  border-radius: 10px;
+  font-weight: 600;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  padding: 10px;
+  transition: all 0.2s ease;
+  border: 1px solid black;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.back-msg:hover {
+  background: black;
+  color: #f7da00;
+}
+.fa-circle-left {
+  padding-right: 5px;
+}
