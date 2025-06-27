@@ -1,11 +1,8 @@
 import React from "react";
-import "./Contact.css";
-import {
-  FaEnvelope,
-  FaEnvelopesBulk,
-  FaGlobe,
-  FaPaperPlane,
-} from "react-icons/fa6";
+// import "./Contact.css";
+
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
 
 const Contact = () => {
   const [result, setResult] = React.useState("");
@@ -34,68 +31,41 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact">
-      <div className="contact-col">
-        <h3>
-          {" "}
-          <i className="fa-icons ">
-            <FaEnvelope />
-          </i>
-          Send me an Email{" "}
-        </h3>
-        <p>
-          Feel free to reach out through contact form or find our contact
-          information below. Your feedback, questions, and suggestions are
-          important to us as we strive to provide exceptional service to our
-          university community.
-        </p>
-        <ul>
-          <li>
-            <i className="fa-icons">
-              <FaGlobe />
-            </i>{" "}
-            https://trilliams.sh
-          </li>
-          <li>
-            <i className="fa-icons">
-              <FaEnvelopesBulk />
-            </i>
-            <br />
-            P.O. Box 129
-            <br /> Syracuse, NY 13207 <br /> United States of America
-          </li>
-        </ul>
+    <>
+      <span className="contact-head">
+        <span className="txt">Co</span>{" "}
+        <i className="fa-solid fa-house-chimney fa-flip-horizontal"></i>
+        <span className="txt">tact</span>
+        <br /> <div className="divide"></div>
+        <br />
+      </span>
+
+      <div className="po-box">
+        <span className="address">
+          <h5>P.O. Box 129</h5>
+          <p>Syracuse, New York 13201</p>
+        </span>
       </div>
-      <div className="contact-col">
-        <form onSubmit={onSubmit}>
-          <label>Your name:</label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter your name"
-            required
-          />
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            required
-          />
-          <label>Write your message here:</label>
-          <textarea
-            name="message"
-            rows="6"
-            placeholder="Enter your message..."
-            required
-          ></textarea>
-          <button type="submit" className="btn dark-btn">
-            <FaPaperPlane /> Send
-          </button>
-        </form>
-        <span>{result} </span>
-      </div>
-    </div>
+      <form className="contact-form" onSubmit={onSubmit}>
+        <input type="text" name="name" placeholder="Enter your name" required />
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email address"
+          required
+        />
+        <textarea
+          name="message"
+          rows="4"
+          placeholder="Enter your message..."
+          required
+        ></textarea>
+        <button type="submit" className="contact-btn">
+          Send now
+        </button>
+      </form>
+      <span>{result} </span>
+    </>
   );
 };
 

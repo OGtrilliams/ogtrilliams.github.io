@@ -1,0 +1,122 @@
+.site-header {
+  background-image: var(--pink-wave);
+  /* min-height: 18vh; */
+  display: flex;
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  min-height: 6vh;
+  align-items: center;
+  /* box-sha
+  dow: 0 4px 8px rgba(0, 0, 0, 0.3); */
+  transition: background-color 0.4s;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+}
+.site-header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 30%;
+  gap: 20px;
+}
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+.navbar ul li a:hover {
+  letter-spacing: 4px;
+}
+
+.logo {
+  font-family: "Homemade Apple";
+
+  /* text-transform: uppercase; */
+  letter-spacing: 5px;
+  font-size: 24px;
+}
+.burger {
+  display: none;
+  cursor: pointer;
+}
+.burger div {
+  width: 35px;
+  height: 3px;
+  background: var(--accent1);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+.box {
+  display: inline-block;
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .site-header {
+    padding-bottom: 32px;
+  }
+  .toggle-burger {
+    display: flex;
+  }
+  .navbar {
+    position: fixed;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+  .navbar li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+}
+.nav-active {
+  transform: translateX(0%);
+}
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+/* 
+Dark mode
+ */
+body.dark-mode nav {
+  color: var(--dark-text);
+}
+body.dark-mode .site-header {
+  background-image: var(--purple-bliss);
+}
