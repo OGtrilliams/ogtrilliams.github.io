@@ -27,7 +27,7 @@ const Hero = () => {
         >
           <ambientLight intensity={0.5} />
           <Float speed={0.5}>
-            {/* <Planet scale={isMobile ? 0.7 : 1} /> */}
+            <Planet scale={isMobile ? 0.7 : 1} />
           </Float>
 
           <Environment resolution={256}>

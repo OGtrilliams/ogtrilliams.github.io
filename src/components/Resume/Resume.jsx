@@ -1,7 +1,7 @@
 // import "./Resume.css";
 import "./js/custom.jsx";
 // import headshot from "../../assets/image.jpg";
-
+import headshot from '/images/image.jpg'
 const showMail = () => {
   const myEmail = document.querySelector(".hidemail");
   const placeHolder = document.querySelector(".showmail");
