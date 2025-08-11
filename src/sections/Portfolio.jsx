@@ -4,15 +4,14 @@ import { projects } from "../constants";
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Resume from "../components/Resume/Resume";
 
-const Works = () => {
+const Portfolio = () => {
   const overlayRefs = useRef([]);
   const previewRef = useRef(null);
 
   const [currentIndex, setCurrentIndex] = useState(null);
-  const text = `Featured projects that have been meticulously
-    crafted with passion to drive
-    results and impact.`;
+  const text = `I’m passionate about building intuitive, accessible, and high-performing applications.`;
 
   const mouse = useRef({ x: 0, y: 0 });
   const moveX = useRef(null);
@@ -100,23 +99,23 @@ const Works = () => {
   };
 
   return (
-    <section id="work" className="flex flex-col min-h-screen">
+    <section id="project" className="flex flex-col min-h-screen">
       <AnimatedHeaderSection
         subTitle={"Logic meets Aesthetics, Seamlessly"}
-        title={"Portfolio"}
+        title={"Resume"}
         text={text}
         textColor={"text-black"}
         withScrollTrigger={true}
       />
       <div
-        className="relative flex flex-col font-light"
+        className="relative hidden f-lex flex-col font-light"
         onMouseMove={handleMouseMove}
       >
         {projects.map((project, index) => (
           <div
             key={project.id}
             id="project"
-            className="relative flex flex-col gap-1 py-5 cursor-pointer group md:gap-0"
+            className="relative hidden fle-x flex-col gap-1 py-5 cursor-pointer group md:gap-0"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
           >
@@ -163,6 +162,7 @@ const Works = () => {
             </div>
           </div>
         ))}
+
         {/* desktop Flaoting preview image */}
         <div
           ref={previewRef}
@@ -178,15 +178,16 @@ const Works = () => {
         </div>
       </div>
 
-      <div className="summary">
-        I’m passionate about building intuitive, accessible, and high-performing
-        applications. My career has taken me from supporting large-scale cloud
-        infrastructure to creating technical tutorials, developing interactive
-        training tools, and building web-based solutions using JavaScript, HTML,
-        and CSS.
+      {/* Resume */}
+
+      <div
+        className="relative flex flex-col font-light"
+        onMouseMove={handleMouseMove}
+      >
+        <Resume />
       </div>
     </section>
   );
 };
 
-export default Works;
+export default Portfolio;
