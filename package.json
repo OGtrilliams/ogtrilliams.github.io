@@ -1,7 +1,7 @@
 {
   "name": "new-site",
   "private": true,
-  "homepage": "https://github.com/OGtrilliams/ogtrilliams.github.io",
+  "homepage": "https://trilliams.sh",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
