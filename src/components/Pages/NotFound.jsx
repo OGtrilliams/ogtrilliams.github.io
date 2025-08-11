@@ -1,6 +1,3 @@
-import React from "react";
-import "./NotFound.css";
-
 const NotFound = () => {
   function goBack() {
     history.back();

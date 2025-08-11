@@ -1,0 +1,356 @@
+@import "tailwindcss";
+
+/* Amiamie Regular */
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-Regular.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Amiamie Regular Italic */
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-Italic.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Amiamie Light */
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-Light.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Amiamie Light Italic */
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-LightItalic.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Amiamie Black */
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-Black.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Amiamie Black Italic */
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-BlackItalic.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Amiamie-Round Variants (if needed separately) */
+@font-face {
+  font-family: "Amiamie-Round";
+  src: url("/fonts/otf/Amiamie-RegularRound.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-RegularRound.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiamie-Round";
+  src: url("/fonts/otf/Amiamie-BlackRound.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-BlackRound.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiamie-Round";
+  src: url("/fonts/otf/Amiamie-BlackItalicRound.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-BlackItalicRound.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@theme {
+  --color-primary: #e5e5e0;
+  --color-DarkLava: #393632;
+  --color-SageGray: #8b8b73;
+  --color-gold: #cfa355;
+  --font-amiamie: "Amiamie", sans-serif;
+  --font-amiamie-round: "Amiamie-Round", sans-serif;
+  --gradient: linear-gradient(45deg, #393632, #8b8b73);
+  --gradient1: linear-gradient(45deg, #cfa355, #8b8b73);
+
+  --animate-marquee: marquee 40s infinite linear;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+}
+
+body {
+  background: #e5e5e0;
+  color: black;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: var(--font-amiamie);
+}
+
+@utility clip-path {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}
+
+@utility banner-text-responsive {
+  @apply text-[68px] sm:text-[118px] md:text-[126px] lg:text-[152px] leading-9 sm:leading-16 lg:leading-20;
+}
+
+@utility value-text-responsive {
+  @apply text-2xl md:text-[26px] lg:text-[32px];
+}
+
+@utility marquee-text-responsive {
+  @apply text-[28px] sm:text-[36px] lg:text-[42px];
+}
+
+@utility contact-text-responsive {
+  @apply text-[42px] sm:text-[52px] md:text-[62px] lg:text-[100px];
+}
+/* contactform */
+
+.container {
+  @apply h-full w-full flex flex-row items-center justify-center;
+}
+form {
+  @apply flex flex-col gap-2.5 text-[1.5em] w-full max-w-[1250px] mr-5 mb-[25px];
+  font: inherit;
+}
+form > div {
+  @apply w-full flex justify-center;
+}
+form label {
+  @apply shrink-0 h-[50px] w-[45px] bg-[color:var(--color-gold)] fill-[white] justify-center items-center rounded-[10px_0_0_10px];
+}
+form input {
+  @apply box-border grow min-w-0 h-[50px] border-b-[color:var(--color-gold)] bg-[black] text-[color:var(--color-primary)] p-[1em] border-b-2 border-[none] border-solid hover:border-[color:var(--primary)] focus:border-[color:var(--color-gold)];
+  font: inherit;
+  transition: 150ms ease;
+}
+form input:focus {
+  outline: none;
+}
+div:has(input:focus) > label {
+  @apply bg-[color:var(--color-gold)];
+}
+form input::placeholder {
+  @apply text-[color:var(--color-DarkLava)];
+}
+form button {
+  @apply bg-[rgb(207,163,85,0.4)] text-[color:var(--color-primary)] font-semibold uppercase cursor-pointer transition-[150ms] duration-[ease] mt-2.5 px-[4em] py-[0.85em] rounded-md border-[none] hover:bg-[color:var(--color-gold)] focus:bg-[color:var(--color-gold)];
+  font: inherit;
+}
+form button:focus {
+  outline: none;
+}
+form div.incorrect label {
+  @apply text-[#f06272];
+}
+form div.incorrect input {
+  @apply border-[#f06272];
+}
+#error-message {
+  @apply text-[#f06272];
+}
+form textarea {
+  @apply border-[color:var(--color-gold)] text-[color:var(--color-primary)] text-[1.5em] w-full mt-5 border-2 border-solid focus:border focus:border-[color:var(--color-gold)] focus:border-solid;
+  background: transparent;
+}
+form textarea::placeholder {
+  @apply text-[color:var(--color-DarkLava)];
+  /* color: #393632; */
+}
+form textarea:focus {
+  /* outline: var(--gold); */
+  outline: 0;
+}
+.container .color-pane {
+  @apply h-full w-full max-w-[1250px];
+  background: var(--color-gold);
+}
+/* Resume */
+
+.commonBtn {
+  @apply cursor-pointer text-base text-[white] transition-all duration-[0.4s] ease-[ease] relative overflow-hidden px-[30px] py-[13px] rounded-[30px] border-[none] before:content-[""] before:absolute before:w-full before:h-full before:transition-all before:duration-[0.4s] before:ease-[ease] before:-left-full before:top-0 hover:before:text-white hover:before:left-0 hover:text-[white];
+  background: var(--gradient);
+}
+.commonBtn::before {
+  background: var(--gradient1);
+}
+.commonBtn span {
+  @apply relative z-[1];
+}
+.r-heading {
+  @apply text-[32px] text-[color:var(--color-primary)] mb-2.5;
+}
+.hero-buttons .status {
+  @apply text-[0.9rem];
+}
+.hero-image {
+  @apply relative w-[500px] h-[500px] shrink-0 mt-20;
+}
+
+.download-btn {
+  @apply border border-[color:var(--color-gold)] text-[color:var(--color-gold)] cursor-pointer transition-[0.3s] duration-[ease-in-out] no-underline text-sm px-[25px] py-3 rounded-[20px] border-solid hover:text-[color:var(--color-primary)];
+  background: transparent;
+}
+.download-btn:hover {
+  background: white;
+}
+.social-icons a {
+  @apply w-[45px] h-[45px] flex items-center justify-center no-underline text-[#333] text-lg rounded-[50%] hover:text-[white];
+  background: #eee;
+}
+.social-icons a:hover {
+  background: var(--gradient1);
+}
+.resume-svg {
+  @apply absolute w-full h-full z-[1] left-0 top-0;
+}
+svg rect {
+  @apply fill-none stroke-[url(#grad)] stroke-[5];
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  rx: 20;
+  ry: 20;
+}
+
+.resume-svg rect {
+  @apply w-[calc(100%_-_4px)] h-[calc(100%_-_4px)];
+  x: 2;
+  y: 2;
+}
+@keyframes drawBorder {
+  to {
+    stroke-dashoffset: var(--offset);
+  }
+}
+
+.skill-box {
+  @apply relative text-center overflow-hidden px-5 py-8 rounded-[20px];
+  background: var(--SageGray);
+}
+.skill-content {
+  @apply relative z-[2];
+}
+.percent {
+  @apply text-[50px] font-[bold] mb-2.5;
+}
+.skill-box p {
+  @apply text-[#555] m-0;
+}
+.small {
+  @apply text-[#888] tracking-[2px] text-[13px];
+}
+
+.service-card {
+  @apply w-[350px] flex flex-col justify-center items-center shadow-[0_10px_20px_rgba(0,0,0,0.4)] transition-all duration-[0.3s] ease-[ease] p-10 rounded-[20px] border-2 border-solid border-transparent hover:translate-y-[-5px] hover:shadow-[5px_0px_22px_5px_#7414f524] hover:rounded-[var(--color-gold)];
+  background: #f7f7fc;
+}
+.actiive {
+  @apply shadow-[5px_0px_22px_5px_#7414f524];
+  border-collapse: #7f00ff;
+}
+.icon-box.actiive {
+  @apply text-[white];
+  background: var(--gradient1);
+}
+.service-card:hover .icon-box {
+  @apply text-[white];
+  background: var(--gradient1);
+}
+.icon-box {
+  @apply flex text-[black] items-center justify-center p-5 rounded-[20px];
+  background: white;
+}
+.icon-box i {
+  @apply text-[50px];
+}
+.section {
+  @apply flex-[1_1_450px] text-left shadow-[0_5px_20px_rgba(0,0,0,0.2)] p-[30px] rounded-[20px];
+}
+.timeline {
+  @apply relative pl-[30px] before:content-[""] before:absolute before:w-0.5 before:left-[15px] before:inset-y-0;
+}
+.timeline::before {
+  background: var(--primary-color);
+}
+.timeline-item {
+  @apply relative mb-[30px] last:mb-0 before:content-[""] before:absolute before:left-[-22px] before:w-[15px] before:h-[15px] before:rounded-[50%] before:top-1;
+}
+.timeline-item::before {
+  background: var(--primary-color);
+}
+.timeline-item h3 {
+  @apply text-base font-semibold text-[color:var(--color-primary)] mb-[5px];
+}
+.timeline-item p {
+  @apply text-sm mb-2.5;
+}
+
+.testimonial.active {
+  @apply opacity-100 translate-x-0 relative;
+}
+.filters button {
+  @apply border-[color:var(--color-primary)] text-[color:var(--color-primary)] cursor-pointer font-semibold transition-[0.3s] px-[1.2rem] py-[0.6rem] rounded-[50px] border-2 border-solid;
+  background: transparent;
+}
+.filters button:active,
+.filters button:hover {
+  @apply text-[white];
+  background: var(--color-primary);
+}
+.carrd {
+  @apply shadow-[0_4px_12px_rgba(0,0,0,0.05)] overflow-hidden w-full max-w-xs transition-[0.3s] flex flex-col justify-between p-5 rounded-2xl;
+  background: var(--SageGray);
+}
+.carrd h4 {
+  @apply text-[15px] font-semibold mb-[5px];
+}
+.carrd p {
+  @apply text-sm text-[#666];
+}
+.card img {
+  @apply w-full block transition-[0.5s] duration-[ease-in-out] hover:scale-105;
+}
+.card-body {
+  @apply relative text-left p-4;
+}
+.card-body button {
+  @apply absolute text-[white] rotate-[123deg] text-xl px-[15px] py-3 rounded-[28px] border-[none] right-5 top-6;
+  background: var(--color-primary);
+}
+.card-title {
+  @apply font-bold text-[1.1rem] mb-[0.3rem];
+}
+.card-category {
+  @apply text-[0.9rem] text-[#67b280] mb-2;
+}
