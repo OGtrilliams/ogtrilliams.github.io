@@ -1,4 +1,3 @@
-
 const NotFound = () => {
   function goBack() {
     history.back();
